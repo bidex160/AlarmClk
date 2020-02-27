@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:padding="20dp">
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="21dp"
+        android:layout_marginTop="10dp"
+        android:text="Set Alarm"
+        android:textStyle="bold"
+        android:textAlignment="center"
+        />
+<RelativeLayout
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_below="@id/textView2"
+    android:layout_centerHorizontal="true">
+    <EditText
+        android:id="@+id/hoursedit"
+        android:layout_width="40dp"
+        android:layout_height="wrap_content"
+
+
+        android:layout_marginTop="40dp"
+
+
+        android:hint="hrs"
+        android:inputType="text" />
+    <TextView
+        android:id="@+id/dot"
+        android:layout_width="wrap_content"
+        android:layout_height="21dp"
+        android:layout_marginTop="45dp"
+
+        android:text=":"
+        android:textStyle="bold"
+
+
+        android:layout_toRightOf="@+id/hoursedit"
+        android:textAlignment="center"
+        />
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginTop="40dp"
+        android:id="@+id/minsedit"
+        android:hint="mins"
+        android:layout_toRightOf="@+id/dot"
+       />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/hoursedit"
+        android:layout_marginTop="30dp"
+        android:text="Set"
+        android:textStyle="bold"
+
+        android:id="@+id/stx"
+        android:layout_centerInParent="true"/>
+
+</RelativeLayout>
+
+
+</RelativeLayout>
