@@ -12,6 +12,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
+
+import com.google.android.material.tabs.TabLayout;
 
 import java.util.ArrayList;
 import java.util.Calendar;
@@ -30,12 +33,12 @@ public class Set extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_set);
-        setHour= (EditText)findViewById(R.id.hoursedit);
-        setMin =(EditText)findViewById(R.id.minsedit);
-        setbt = (Button)findViewById(R.id.stx);
-      final demofragment demofragment = new demofragment();  // demo fragment object to be able to pass setArgument
+        setHour= findViewById(R.id.hoursedit);
+        setMin =findViewById(R.id.minsedit);
+        setbt = findViewById(R.id.stx);
 
-        recycleadapterView = new RecycleadapterView(this);
+        final ViewPageradapter viewPageradapter = new ViewPageradapter(getSupportFragmentManager());
+
 
         if (arrayclocks == null){
             arrayclocks = new ArrayList<>();
@@ -52,12 +55,15 @@ public class Set extends AppCompatActivity {
 
                     setalarmmanager(); // Method to set the Alarmmanager, pendingIntent
 
-                    // To pass set hours and minute to demo fragment
+                  Intent intent = new Intent(Set.this, MainActivity.class);
+                    Bundle bundle = new Bundle();
 
-                     Bundle bundle = new Bundle();
+
                     bundle.putInt("seth", seth);
                     bundle.putInt("setm", setm);
-                    demofragment.setArguments(bundle);
+                    intent.putExtra("bundle", bundle);
+                    startActivity(intent);
+
 
 
                 }catch (Exception e){
@@ -89,4 +95,7 @@ public class Set extends AppCompatActivity {
         alarmManager.set(AlarmManager.RTC_WAKEUP, calendar.getTime().getTime(), pendingIntent);
 
     }
+
+
+
 }

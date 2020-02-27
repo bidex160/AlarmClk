@@ -2,30 +2,36 @@ package com.example.slidingtest;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 
-public class ViewPageradapter extends FragmentStatePagerAdapter {
+public class ViewPageradapter extends FragmentStatePagerAdapter  {
     Context context;
 
     public ViewPageradapter(FragmentManager fm) {
         super(fm);
     }
 
+
+
+
     @Override
     public Fragment getItem(int position) {
 
         switch (position){
             case 0:
-// To display demofragmet for Alarm
+                 // To display demofragmet for Alarm
                   demofragment demofragment = new demofragment();
 
                 Bundle bundle = new Bundle();
                 bundle.putString("message", "Alarm");
+
 
                 demofragment.setArguments(bundle);
 
